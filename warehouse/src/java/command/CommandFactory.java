@@ -27,12 +27,7 @@ public class CommandFactory {
         comands.put("register", new RegisterCommand());
         comands.put("logout", new LogoutCommand());
         comands.put("main", new MainCommand());
-        comands.put("create_new_bunch", new CreateBunchCommand());
         comands.put("login", new LoginCommand());
-        comands.put("add_to_bunch", new AddToBunchCommand());
-        comands.put("add_flower", new AddFlowerToBunchCommand());
-        comands.put("bunch_flowers", new BunchFlowersCommand());
-        comands.put("remove_flower", new RemoveFlowerCommand());
     }
 
     public Command getCommand(HttpServletRequest request) {

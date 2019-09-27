@@ -1,9 +1,7 @@
 package java.command;
 
-import dao.BunchDAO;
 import dao.DAOFactory;
 import dao.FlowerDAO;
-import entitiy.Bunch;
 import entitiy.Flower;
 import entitiy.User;
 import java.util.List;
@@ -17,8 +15,6 @@ public class MainCommand implements Command {
         User user = (User) request.getSession().getAttribute("user");
 
         if (user != null) {
-            BunchDAO bunchDAO = factory.getBunchDAO();
-            List<Bunch> bunches = bunchDAO.getAllBunches(user);
             request.setAttribute("bunches", bunches);
         } else {
             FlowerDAO flowerDAO = factory.getFlowerDAO();

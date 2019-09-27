@@ -24,7 +24,10 @@ public class Controller extends HttpServlet {
 
     private void proccessRequest(
         HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        CommandFactory commandFactory = CommandFactory.commandFactory();
+        Command command = commandFactory.getCommand(req);
+        String page = command.execute(req);
+        RequestDispatcher dispatcher = req.getRequestDispatcher(page);
         dispatcher.forward(req, resp);
     }
 
