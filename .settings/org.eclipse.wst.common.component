@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="final-projects">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/easyProject/CSVStud/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/warehouse/src"/>
+        <property name="context-root" value="final-projects"/>
+        <property name="java-output-path" value="/final-projects/easyProject/CSVStud/out/production/CSVStud"/>
+    </wb-module>
+</project-modules>
