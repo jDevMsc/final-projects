@@ -1,22 +1,22 @@
-# Final Projects
-The purpose of these projects is to demonstrate the development skills
+[![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
-***
-### Topics:
-* Basic Java Language Syntax
-* OOP (Encapsulation, Inheritance, Polymorphism)
-* Input / Output System, IO, Socket
-* OOD (SOLID)
-* Collections (List, Set, Map, Tree, Queue)
-* Garbage Collection (GC types, link types)
-* Multithreading
-* SQL, JDBC
-* Java EE (Serlvet, JSP, JSTL)
-* Hibernate ORM (Mapping, HQL, testing using HSQLDB)
-* Spring Framework (IoC, MVC, Data, Security)
+# Final Projects (updating now...)
+Here are collected personal projects and the latest test tasks that I received from companies.  
+The purpose of these projects is to demonstrate the development skills.  
 
-***
 
-### Проекты:
+## Projects:
+Full description of the project and technologies used inside the repository.
 
-#### 1)
+### 1)Employees  
+Development of an application for managing and storing information about employees.
+
+### 2)ServerClient  
+Simple implementation of working with the server
+
+### 3)My Journal  
+User calorie counting service.
+
+### 4)  
+---
+
