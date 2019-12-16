@@ -1,5 +1,6 @@
 package org.tickets.germes.app.model.entity.geography;
 
+import java.util.Objects;
 import org.tickets.germes.app.model.entity.base.AbstractEntity;
 import org.tickets.germes.app.model.entity.transport.TransportType;
 
@@ -17,6 +18,14 @@ public class Station extends AbstractEntity {
 	private Coordinate coordinate;
 	
 	private TransportType transportType;
+
+	/**
+	 * add station through city
+	 */
+	public Station(final City city, final TransportType transportType) {
+		this.city = Objects.requireNonNull(city);
+		this.transportType = Objects.requireNonNull(transportType);
+	}
 
 
 	public City getCity() {
