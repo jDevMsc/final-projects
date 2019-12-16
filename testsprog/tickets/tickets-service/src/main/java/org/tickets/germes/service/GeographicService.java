@@ -1,4 +1,4 @@
-package org.tickets.germes.app.service;
+package org.tickets.germes.service;
 
 import java.util.List;
 import org.tickets.germes.app.model.entity.geography.City;

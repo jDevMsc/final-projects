@@ -5,5 +5,5 @@
     <artifactId>germes</artifactId>
     <version>0.0.1</version>
   </parent>
-  <artifactId>germes-persistence</artifactId>
+  <artifactId>tickets-persistence</artifactId>
 </project>

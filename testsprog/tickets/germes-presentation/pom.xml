@@ -6,7 +6,7 @@
 		<artifactId>germes</artifactId>
 		<version>0.0.1</version>
 	</parent>
-	<artifactId>germes-presentation</artifactId>
+	<artifactId>tickets-presentation</artifactId>
 	<packaging>war</packaging>
 
 	<build>

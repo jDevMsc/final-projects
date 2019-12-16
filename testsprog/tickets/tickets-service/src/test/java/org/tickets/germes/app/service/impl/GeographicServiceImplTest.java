@@ -6,7 +6,8 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.tickets.germes.app.model.entity.geography.City;
-import org.tickets.germes.app.service.GeographicService;
+import org.tickets.germes.service.GeographicService;
+import org.tickets.germes.service.impl.GeographicServiceImpl;
 
 public class GeographicServiceImplTest {
     private GeographicService service;

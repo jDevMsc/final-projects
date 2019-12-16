@@ -1,0 +1,24 @@
+# uses language
+language: java
+jdk:
+  - openjdk11
+
+# use regular user mode to build the project.
+sudo: false
+
+# after completing the assembly, run a script that will collect statistics on JaCoCo
+# It uses a third-party service https://codecov.io/
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+# Send a notification to artemjdev@gmail.com  if the assembly fell
+notifications:
+  email:
+    recipients:
+      - artemjdev@gmail.com
+    on_success: never # default: change
+    on_failure: always # default: always
+
+env:
+  global:
+    - CODECOV_TOKEN="75a3c18b-fec3-4c97-8090-34931a400a5"

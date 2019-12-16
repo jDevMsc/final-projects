@@ -1,10 +1,10 @@
-package org.tickets.germes.app.service.impl;
+package org.tickets.germes.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import org.tickets.germes.app.model.entity.geography.City;
-import org.tickets.germes.app.service.GeographicService;
 import org.tickets.germes.app.util.CommonUtil;
+import org.tickets.germes.service.GeographicService;
 
 /**
  * Default implementation of the GeographicService}
