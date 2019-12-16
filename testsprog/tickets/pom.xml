@@ -3,30 +3,30 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.tickets</groupId>
 	<artifactId>germes</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.8</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>germes-presentation</module>
-		<module>germes-model</module>
-		<module>germes-persistence</module>
+		<module>tickets-presentation</module>
+		<module>tickets-model</module>
+		<module>tickets-persistence</module>
 		<module>tickets-service</module>
 	</modules>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<junit.version>4.12</junit.version>
-		<jersey.version>2.27</jersey.version>
+		<jersey.version>2.28</jersey.version>
 	</properties>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
-
+</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -37,29 +37,7 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.4</version>
-			<!--		launch the task of analyzing code for coverage		-->
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<!--			start the code verification task after running the mvn test command		-->
-					<execution>
-						<id>report</id>
-						<phase>test</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
-
 	</build>
 
 </project>
