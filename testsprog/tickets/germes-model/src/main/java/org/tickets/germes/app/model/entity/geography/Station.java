@@ -1,22 +1,23 @@
 package org.tickets.germes.app.model.entity.geography;
 
+import org.tickets.germes.app.model.entity.base.AbstractEntity;
 import org.tickets.germes.app.model.entity.transport.TransportType;
 
 /**
  * Station where passengers can get off or take specific kind
- * of transport. 
+ * of transport. Multiple stations compose route of the trip.
  */
-public class Station  {
+public class Station extends AbstractEntity {
 	private City city;
 	
 	private Address address;
-	
 
 	private String phone;
 	
 	private Coordinate coordinate;
 	
 	private TransportType transportType;
+
 
 	public City getCity() {
 		return city;

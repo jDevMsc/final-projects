@@ -1,7 +1,7 @@
 package org.tickets.germes.app.model.entity.geography;
 
 /**
- * Value type that stores address attributes
+ * Value type that stores address attributes (station and users)
  */
 public class Address {
 	private String zipCode;

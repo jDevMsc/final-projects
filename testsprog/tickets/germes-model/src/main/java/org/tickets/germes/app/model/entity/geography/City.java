@@ -1,17 +1,41 @@
 package org.tickets.germes.app.model.entity.geography;
 
+import java.util.HashSet;
 import java.util.Set;
+import org.tickets.germes.app.model.entity.base.AbstractEntity;
 
-
-public class City  {	
+/**
+ * Any locality that contains transport stations
+ */
+public class City  extends AbstractEntity {
 	private String name;
 
+	/**
+	 * Name of the district where city is placed
+	 */
 	private String district;
 
+	/**
+	 * Name of the region where district is located.
+	 */
 	private String region;
-	
 
+	/**
+	 * Set of transport stations that is linked to this
+	 * locality
+	 */
 	private Set<Station> stations;
+
+
+	/**
+	 * Adds specified station to the city station list
+	 */
+	public void addStation(final Station station) {
+		if(stations == null) {
+			stations = new HashSet<>();
+		}
+		stations.add(station);
+	}
 
 	public String getName() {
 		return name;
