@@ -11,11 +11,6 @@
 
 
 	<dependencies>
-		<dependency>
-			<groupId>org.glassfish.jersey.inject</groupId>
-			<artifactId>jersey-hk2</artifactId>
-			<version>2.27</version>
-		</dependency>
 		<!--	Test	-->
 		<dependency>
 			<groupId>org.glassfish.jersey.test-framework</groupId>
@@ -35,20 +30,6 @@
       <artifactId>javax.ws.rs-api</artifactId>
       <version>2.1</version>
     </dependency>
-
-		<dependency>
-			<groupId>org.glassfish.jersey.core</groupId>
-			<artifactId>jersey-client</artifactId>
-			<version>2.27</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.glassfish.jersey.containers</groupId>
-			<artifactId>jersey-container-grizzly2-http</artifactId>
-			<version>2.27</version>
-			<scope>test</scope>
-		</dependency>
-
 
 		<dependency>
 			<groupId>org.tickets</groupId>

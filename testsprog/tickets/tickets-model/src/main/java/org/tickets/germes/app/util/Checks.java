@@ -14,4 +14,5 @@ public class Checks {
             throw new InvalidParameterException(message);
         }
     }
+
 }
