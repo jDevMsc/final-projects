@@ -1,8 +1,10 @@
 package org.tickets.germes.app.model.entity.geography;
 
 import java.util.Objects;
+import org.apache.commons.lang3.StringUtils;
 import org.tickets.germes.app.model.entity.base.AbstractEntity;
 import org.tickets.germes.app.model.entity.transport.TransportType;
+import org.tickets.germes.app.model.search.criteria.StationCriteria;
 
 /**
  * Station where passengers can get off or take specific kind
@@ -25,6 +27,25 @@ public class Station extends AbstractEntity {
 	public Station(final City city, final TransportType transportType) {
 		this.city = Objects.requireNonNull(city);
 		this.transportType = Objects.requireNonNull(transportType);
+	}
+	/**
+	 * Verifies if current station matches specified criteria
+	 */
+	public boolean match(final StationCriteria criteria) {
+		Objects.requireNonNull(criteria, "Station criteria is not initialized");
+		if(!StringUtils.isEmpty(criteria.getName())) {
+			if(!city.getName().equals(criteria.getName())) {
+				return false;
+			}
+		}
+
+		if(criteria.getTransportType() != null) {
+			if(transportType != criteria.getTransportType()) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 

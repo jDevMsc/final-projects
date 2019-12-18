@@ -30,6 +30,9 @@ public class GeographicServiceImpl implements GeographicService {
 	 */
 	private int counter = 0;
 
+	private int stationCounter = 0;
+
+
 	public GeographicServiceImpl() {
 		cities = new ArrayList<>();
 	}
@@ -45,6 +48,11 @@ public class GeographicServiceImpl implements GeographicService {
 			city.setId(++counter);
 			cities.add(city);
 		}
+		city.getStations().forEach((station) -> {
+			if (station.getId() == 0) {
+				station.setId(++stationCounter);
+			}
+		});
 	}
 
 	@Override
@@ -54,31 +62,11 @@ public class GeographicServiceImpl implements GeographicService {
 
 	@Override
 	public List<Station> searchStations(final StationCriteria criteria, final RangeCriteria rangeCriteria) {
-		/**
-		 * 		First, we select all cities that match the condition (if there is a condition)
-		 */
-		Stream<City> stream = cities.stream().filter(
-			(city) -> StringUtils.isEmpty(criteria.getName()) || city.getName().equals(criteria.getName()));
-			/**
-			 * Then we glue all the stations in one Set for further search
-			 */
-		Optional<Set<Station>> stations = stream.map((city) -> city.getStations()).reduce((stations1, stations2) -> {
-			Set<Station> newStations = new HashSet<>(stations2);
-			newStations.addAll(stations1);
-			return newStations;
-		});
-		/**
-		 * If there are no stations at all, then return an empty list
-		 */
-		if(!stations.isPresent()) {
-			return Collections.emptyList();
+		Set<Station> stations = new HashSet<>();
+		for (City city : cities) {
+			stations.addAll(city.getStations());
 		}
-		/**
-		 * Otherwise, we filter out the stations according to the type of transport (if there is such a condition).
-		 */
-		return stations.get()
-			.stream()
-			.filter((station) -> criteria.getTransportType() == null
-				|| station.getTransportType() == criteria.getTransportType()).collect(Collectors.toList());
+		return stations.stream().filter((station) -> station.match(criteria))
+			.collect(Collectors.toList());
 	}
 }

@@ -2,6 +2,7 @@ package org.tickets.germes.app.model.entity.base;
 
 import java.time.LocalDateTime;
 import org.tickets.germes.app.model.entity.person.Account;
+import org.tickets.germes.app.model.search.criteria.StationCriteria;
 
 /**
  * Base class for all business entities
@@ -94,5 +95,5 @@ public abstract class AbstractEntity {
 			return false;
 		return true;
 	}
-	
+
 }
