@@ -9,14 +9,13 @@ import org.tickets.germes.app.model.entity.base.AbstractEntity;
 import org.tickets.germes.app.rest.dto.base.BaseDTO;
 import org.tickets.germes.app.service.transform.Transformer;
 import org.tickets.germes.app.util.Checks;
+import org.tickets.germes.app.util.CommonUtil;
 import org.tickets.germes.app.util.ReflectionUtil;
 
 /**
  *  Uses reflection to transform objects
  */
 public class SimpleDTOTransformer implements Transformer {
-	private static final Logger LOGGER = LoggerFactory
-		.getLogger(SimpleDTOTransformer.class);
 
 	@Override
 	public <T extends AbstractEntity, P extends BaseDTO<T>> P transform(
@@ -29,11 +28,7 @@ public class SimpleDTOTransformer implements Transformer {
 			ReflectionUtil.findSimilarFields(entity.getClass(), clz));
 		dto.transform(entity);
 
-		if (LOGGER.isDebugEnabled()) {
-			LOGGER.debug("SimpleDTOTransformer.transform: {} DTO object",
-				ReflectionToStringBuilder.toString(dto,
-					ToStringStyle.SHORT_PREFIX_STYLE));
-		}
+
 
 		return dto;
 	}
@@ -52,15 +47,9 @@ public class SimpleDTOTransformer implements Transformer {
 
 		T entity = ReflectionUtil.createInstance(clz);
 
-		ReflectionUtil.copyFields(dto, entity,
-			ReflectionUtil.findSimilarFields(dto.getClass(), clz));
+		ReflectionUtil.copyFields(dto, entity, ReflectionUtil.findSimilarFields(dto.getClass(), clz));
 		dto.untransform(entity);
 
-		if (LOGGER.isDebugEnabled()) {
-			LOGGER.debug("SimpleDTOTransformer.transform: {} entity",
-				ReflectionToStringBuilder.toString(entity,
-					ToStringStyle.SHORT_PREFIX_STYLE));
-		}
 
 		return entity;
 	}

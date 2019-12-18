@@ -4,6 +4,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 public class CommonUtil {
     /**
@@ -18,5 +20,11 @@ public class CommonUtil {
      */
     public static <T> List<T> getSafeList(List<T> source) {
         return Collections.unmodifiableList(Optional.ofNullable(source).orElse(Collections.emptyList()));
+    }
+    /**
+     * Сonverts param into string  using all object state
+     */
+    public static String toString(Object param) {
+        return ReflectionToStringBuilder.toString(param,ToStringStyle.SHORT_PREFIX_STYLE);
     }
 }

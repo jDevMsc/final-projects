@@ -34,6 +34,12 @@ public class City  extends AbstractEntity {
 	public City(final String name) {
 		this.name = name;
 	}
+
+	public City() {
+
+	}
+
+
 	/**
 	 * Adds specified station to the city station list
 	 */

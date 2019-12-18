@@ -1,4 +1,0 @@
-# Task Project "Tickets"
-
-## Structure
-

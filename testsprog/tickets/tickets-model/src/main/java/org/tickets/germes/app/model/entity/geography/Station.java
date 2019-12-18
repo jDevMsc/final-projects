@@ -68,4 +68,27 @@ public class Station extends AbstractEntity {
 		this.transportType = transportType;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		if (!super.equals(o)) {
+			return false;
+		}
+		Station station = (Station) o;
+		return Objects.equals(city, station.city) &&
+			Objects.equals(address, station.address) &&
+			Objects.equals(phone, station.phone) &&
+			Objects.equals(coordinate, station.coordinate) &&
+			transportType == station.transportType;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(super.hashCode(), city, address, phone, coordinate, transportType);
+	}
 }

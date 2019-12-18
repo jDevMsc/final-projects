@@ -1,6 +1,7 @@
 package org.tickets.germes.app.util;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,20 +13,29 @@ import org.tickets.germes.app.exception.ConfigurationException;
  *
  */
 public class ReflectionUtil {
+
 	private ReflectionUtil() {
 	}
 
 	/**
 	 * Creates an instance of the specified class.
 	 */
-	public static <T> T createInstance(Class<T> clz)
-			throws ConfigurationException {
+	public static <T> T createInstance(Class<T> clz)throws ConfigurationException {
 		try {
-			return clz.newInstance();
-		} catch (InstantiationException | IllegalAccessException e) {
-			throw new ConfigurationException(e);
+			return clz.getDeclaredConstructor().newInstance();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
 		}
+		return null;
 	}
+
+
 
 	/**
 	 * Returns list of fields with identical names irregardless of their
