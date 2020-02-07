@@ -9,22 +9,22 @@ The purpose of these projects is to demonstrate the development skills.
 Full description of the project and technologies used inside the repository.
 
 ### 1)Training service  
-Training service for students
+Training service for students  
 Stack: Java 8, Spring MVC, Spring Data, Hibernate, Guava, PostgreSQL, Tomcat, Maven
 Link:
 
 ### 2)Employee Database  
-Development of an application for managing and storing information about employees.
+Development of an application for managing and storing information about employees.  
 Stack: Java 8, Servlets, JDBC, JSP, JSTL, Tomcat, JUnit, PostgreSQL, GSON, JAXB, Maven
 Link:
 
 ### 3)My Journal  
-User calorie counting service.
+User calorie counting service.  
 Stack: Java 8, Spring, Hibernate, JSP, JSTL, Tomcat, JUnit, Mockito PostgreSQL, Maven
 Link:
 
 ### 3)WebChat  
-Simple implementation of working with the server
+Simple implementation of working with the server  
 Stack: Java 8
 
 
